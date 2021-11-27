@@ -60,7 +60,7 @@ module.exports = {
       */
     },
     rinkeby: {
-      url: "https://rinkeby.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad", // <---- YOUR INFURA ID! (or it won't work)
+      url: "https://rinkeby.infura.io/v3/54db8d77410745c2b76b33773b6938e6", // <---- YOUR INFURA ID! (or it won't work)
       //    url: "https://speedy-nodes-nyc.moralis.io/XXXXXXXXXXXXXXXXXXXXXXX/eth/rinkeby", // <---- YOUR MORALIS ID! (not limited to infura)
       accounts: {
         mnemonic: mnemonic(),
@@ -257,7 +257,7 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: "PSW8C433Q667DVEX5BCRMGNAH9FSGFZ7Q8", // your api key here
+    apiKey: "G2SJV2E361WNWQIETY4VQ5Y9S28JPG4HSV", // your api key here
   },
 };
 

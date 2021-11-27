@@ -502,6 +502,11 @@ function App(props) {
     tokenBuyAmount && tokensPerEth && ethers.utils.parseEther("" + tokenBuyAmount / parseFloat(tokensPerEth));
   console.log("ethCostToPurchaseTokens:", ethCostToPurchaseTokens);
 
+  //added this
+  const ethValueOfSellingTokens =
+  tokenSellAmount && tokensPerEth && ethers.utils.parseEther("" + tokenSellAmount / parseFloat(tokensPerEth));
+  console.log("ethValueOfSellingTokens:", ethValueOfSellingTokens);
+
   const [tokenSendToAddress, setTokenSendToAddress] = useState();
   const [tokenSendAmount, setTokenSendAmount] = useState();
 
@@ -621,13 +626,14 @@ function App(props) {
               </Card>
             </div>
           
-            {/* 
+           
             
-            Extra UI for buying the tokens back from the user using "approve" and "sellTokens"
+            {/* Extra UI for buying the tokens back from the user using "approve" and "sellTokens" */}
             <Divider />
             <div style={{ padding: 8, marginTop: 32, width: 300, margin: "auto" }}>
               <Card title="Sell Tokens">
                 <div style={{ padding: 8 }}>{tokensPerEth && tokensPerEth.toNumber()} tokens per ETH</div>
+                <div style={{ padding: 8 }}> (subject to 1% fee)</div>
 
                 <div style={{ padding: 8 }}>
                   <Input
@@ -638,7 +644,7 @@ function App(props) {
                       setTokenSellAmount(e.target.value);
                     }}
                   />
-                  <Balance balance={ethCostToPurchaseTokens} dollarMultiplier={price} />
+                  <Balance balance={ethValueOfSellingTokens} dollarMultiplier={price} />
                 </div>
                 {isSellAmountApproved?
 
@@ -676,7 +682,7 @@ function App(props) {
             </div>
             
             
-            */}
+            
 
             <div style={{ padding: 8, marginTop: 32 }}>
               <div>Vendor Token Balance:</div>
